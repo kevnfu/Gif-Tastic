@@ -45,7 +45,7 @@ class Image {
         this.img = $("<img>")
             .attr("src", data.images.fixed_height_still.url)
             // on image click, toggle play
-            .click(this.togglePlay.bind(this));
+            .bind("click", this.togglePlay.bind(this));
         this.div = $("<div>")
             .addClass("gif")
             .append(this.img)
@@ -67,7 +67,7 @@ class Image {
         this.div.append($("<button>")
             .addClass("btn btn-default")
             .html("Add to Fav")
-            .click(() => {
+            .on("click", () => {
                 this.div.children().last().remove(); // remove button
                 this.isFav = true;
                 storage.addFav(this.data); // store in localstorage
@@ -138,18 +138,18 @@ $(document).ready(function() {
         new Image(e).setFav(true).display();
     });
 
-    $("#submit").click(function(event) {
+    $("#submit").on("click", function(event) {
         event.preventDefault();
 
         topics.push($("#input").val());
         renderButtons();
     });
 
-    $("#load").click(function() {
+    $("#load").on("click", function() {
         loadImages(currentQuery, storedResponse.pagination.offset + limit);
     });
 
-    $("#clear-fav").click(function() {
+    $("#clear-fav").on("click", function() {
         storage.empty();
         $("#favs").empty();
     });
