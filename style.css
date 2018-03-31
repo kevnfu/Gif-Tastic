@@ -1,0 +1,23 @@
+.button {
+    margin: 5px;
+}
+
+.gif {
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.gif > p {
+    margin-right: 10px;
+    display: inline;
+}
+
+.gif > button {
+    display: inline;
+}
+
+
+.hidden {
+    display: none;
+}
