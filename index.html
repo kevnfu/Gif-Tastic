@@ -19,13 +19,13 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-3 order-md-2">
+            <div class="col-12 col-md-3 order-md-2 mb-3">
                 <form>
-                    <label for="input">Add an animal</label>
-                    <br>
-                    <input type="text" id="input">
-                    <br>
-                    <input id="submit" type="submit" value="Submit">
+                    <div class="form-group">
+                        <label for="input">Add an animal</label>
+                        <input type="text" id="input" class="form-control">
+                    </div>
+                    <input id="submit" type="submit" value="Submit" class="btn btn-primary">
                 </form>
             </div>
             <div id="display" class="col-12 col-md-9 order-md-1">
@@ -35,7 +35,7 @@
 
         <div class="row">
             <div class="col">
-                <button id="load" class="hidden">More</button>
+                <button id="load" class="hidden btn btn-default">More</button>
             </div>
         </div>
 
@@ -51,7 +51,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <button id="clear-fav">Clear Favs</button>
+                <button id="clear-fav" class="btn btn-default">Clear Favs</button>
             </div>
         </div>
     </div>

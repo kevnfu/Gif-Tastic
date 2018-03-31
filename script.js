@@ -32,7 +32,7 @@ function renderButtons() {
     topics.forEach(e => {
         $("#buttons").append($("<button>")
             .attr("type", "button")
-            .addClass("button")
+            .addClass("button btn btn-default")
             .html(e));
     });
 }
@@ -65,6 +65,7 @@ class Image {
 
     withFavButton() {
         this.div.append($("<button>")
+            .addClass("btn btn-default")
             .html("Add to Fav")
             .click(() => {
                 this.div.children().last().remove(); // remove button
@@ -130,7 +131,7 @@ $(document).on("click", ".button", function() {
 
 $(document).ready(function() {
     renderButtons();
-    
+
     // load saved favorites
     // console.log("initial storage: " + JSON.stringify(storage.favs));
     storage.favs.forEach((e) => {
