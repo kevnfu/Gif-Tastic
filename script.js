@@ -97,7 +97,7 @@ function loadImages(query, offset) {
     $("#load").hide();
 
     $.ajax({
-        url: "http://api.giphy.com/v1/gifs/search?" + $.param({
+        url: "https://api.giphy.com/v1/gifs/search?" + $.param({
             api_key: key, 
             q : query, 
             limit: limit,
@@ -121,7 +121,7 @@ function loadImages(query, offset) {
     });
 }
 
-$(document).on("touchstart", ".button", function() {
+$(document).on("click", ".button", function() {
     $("#display").empty();
     $("#load").hide();
     numLoaded = 0;
