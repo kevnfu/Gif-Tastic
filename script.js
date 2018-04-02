@@ -92,7 +92,7 @@ class Image {
 }
 
 
-// loads up to 10 images. hides l#oad button if no more to load.
+// loads up to 10 images. hides #load button if no more to load.
 function loadImages(query, offset) {
     $("#load").hide();
 
@@ -110,7 +110,7 @@ function loadImages(query, offset) {
             new Image(e).withFavButton().display();
         })
 
-        // save response object
+        // save response object, for pagination
         storedResponse = response;
 
         // manage #load button visibility
@@ -124,7 +124,6 @@ function loadImages(query, offset) {
 $(document).on("click", ".button", function() {
     $("#display").empty();
     $("#load").hide();
-    numLoaded = 0;
     currentQuery = $(this).html();
     loadImages(currentQuery, 0);
 });
@@ -133,8 +132,7 @@ $(document).ready(function() {
     renderButtons();
 
     // load saved favorites
-    // console.log("initial storage: " + JSON.stringify(storage.favs));
-    storage.favs.forEach((e) => {
+    storage.favs.forEach(e => {
         new Image(e).setFav(true).display();
     });
 
@@ -142,6 +140,7 @@ $(document).ready(function() {
         event.preventDefault();
 
         topics.push($("#input").val());
+        $("#input").val("");
         renderButtons();
     });
 
