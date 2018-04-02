@@ -121,7 +121,7 @@ function loadImages(query, offset) {
     });
 }
 
-$(document).on("click touchstart", ".button", function() {
+$(document).on("click touchstart focus", ".button", function() {
     $("#display").empty();
     $("#load").hide();
     numLoaded = 0;
